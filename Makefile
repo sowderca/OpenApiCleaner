@@ -9,3 +9,6 @@ linux:
 
 clean:
 	@rm ./bin/*
+
+run:
+	./bin/Debug/netcoreapp3.0/OpenApiCleaner clean -s api/specification -o output
