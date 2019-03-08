@@ -1,4 +1,4 @@
-﻿using NSwag;
+using NSwag;
 using System.IO;
 using NJsonSchema;
 using System.Linq;

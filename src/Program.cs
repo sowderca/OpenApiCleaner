@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.Extensions.CommandLineUtils;
@@ -40,11 +40,10 @@ namespace OpenApiCleaner {
         /// <summary>
         /// Executes the clean command.
         /// </summary>
-        /// <returns>The clean.</returns>
         /// <param name="command">Command.</param>
         private static void Clean(CommandLineApplication command) {
             command.Name = "Clean";
-            command.Description = "Cleans the OpenAPI specification files of any non-standard enteries";
+            command.Description = "Cleans the OpenAPI specification files of any non-standard entries";
             var specificationOption = command.Option(SpecificationOption, "Path to the directory in which to write the cleaned specification files too.", CommandOptionType.SingleValue);
             var outputOption = command.Option(OutputOption, "Path to the directory in which the cleaned specification files are written to", CommandOptionType.SingleValue);
             command.OnExecute(() => {
@@ -74,14 +73,11 @@ namespace OpenApiCleaner {
             });
         }
         /// <summary>
-        /// Creates a console application to handle user input.
+        /// Runs the command line application using arguments passed to the executable.
         /// </summary>
-        /// <returns>The console app.</returns>
+        /// <param name="args">Command line arguments</param>
         private static void Run(string[] args) {
-            var app = new CommandLineApplication {
-                Name = Name,
-                Description = "Cleans dirty OpenApi specification files"
-            };
+            var app = new CommandLineApplication { Name = Name, Description = "Cleans dirty OpenApi specification files" };
             app.HelpOption(HelpOption);
             app.Command(CleanCommand, command => Clean(command));
             app.Execute(args);

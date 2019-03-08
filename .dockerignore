@@ -1,0 +1,11 @@
+# Folders
+.git/
+.vs/
+.vscode/
+obj/
+bin/
+
+# Files
+.DS_Store
+.gitignore
+.editorconfig
